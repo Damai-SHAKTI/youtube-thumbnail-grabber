@@ -69,6 +69,12 @@ export default function MainCardView({ Width }) {
         setVideoId(link.substr(link.length - 11))
         setInfoText("")
       }
+      else if (link.includes('youtube.com/shorts') && link.length === 52){
+        setIsImageLoading(true);
+        link = link.split("?")[0]
+        setVideoId(link.substr(link.length - 11))
+        setInfoText("")
+      }
       else if (document.getElementById("filled-basic").value === ""){
         setInfoText("TextField Cannot Be Empty!")
         setVideoId("")
